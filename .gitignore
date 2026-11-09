@@ -37,3 +37,6 @@ ENV/
 *.sln
 .DS_Store
 Thumbs.db
+
+# React Router generated type declarations
+.react-router/
