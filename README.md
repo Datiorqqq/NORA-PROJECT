@@ -27,7 +27,7 @@
 | Dashboard, Courses, Deadlines, AI Chat | Заплановано | [#3](https://github.com/Datiorqqq/NORA-PROJECT/issues/3), [#5](https://github.com/Datiorqqq/NORA-PROJECT/issues/5) |
 | Встановлювана PWA, адаптивність та реальний E2E | Заплановано | [#12](https://github.com/Datiorqqq/NORA-PROJECT/issues/12), [#4](https://github.com/Datiorqqq/NORA-PROJECT/issues/4) |
 
-**Обмеження PoC:** один застосунок, персональні дані лише з власної Moodle-сесії, доступ до Moodle — лише на читання. Окремі Express API, Firebase, власна база даних, QDIP, RAG і векторне сховище **не входять до поточної архітектури**. Не додавайте їх без окремого погодження.
+**Обмеження PoC:** один застосунок, персональні дані лише з власної Moodle-сесії, доступ до Moodle — лише на читання.
 
 ## Технології та архітектура
 
