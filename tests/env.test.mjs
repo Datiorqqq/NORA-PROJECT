@@ -1,9 +1,6 @@
 import assert from "node:assert/strict";
 import { afterEach, test } from "node:test";
-import {
-  getRequiredServerEnv,
-  MissingServerConfigurationError,
-} from "../app/.server/env.ts";
+import { getRequiredServerEnv, MissingServerConfigurationError } from "../app/.server/env.ts";
 
 const savedValues = {
   SESSION_SECRET: process.env.SESSION_SECRET,
@@ -28,12 +25,18 @@ test("missing server configuration is rejected", () => {
 
 test("blank server configuration is rejected", () => {
   process.env.GEMINI_API_KEY = "  ";
-  assert.throws(() => getRequiredServerEnv("GEMINI_API_KEY"), MissingServerConfigurationError);
+  assert.throws(
+    () => getRequiredServerEnv("GEMINI_API_KEY"),
+    MissingServerConfigurationError,
+  );
 });
 
 test("short session secrets are rejected", () => {
   process.env.SESSION_SECRET = "too-short";
-  assert.throws(() => getRequiredServerEnv("SESSION_SECRET"), MissingServerConfigurationError);
+  assert.throws(
+    () => getRequiredServerEnv("SESSION_SECRET"),
+    MissingServerConfigurationError,
+  );
 });
 
 test("non-empty credentials remain server-only values", () => {
