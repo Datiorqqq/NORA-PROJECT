@@ -37,6 +37,29 @@ The production server uses `@react-router/serve` on the `PORT` assigned by Railw
 - `docs/` — team documentation.
 - `backend/` and `frontend/` — historical planning notes for the abandoned split-service architecture; **not** runnable applications.
 
+## Development workflow (для студентів)
+
+Повні правила: [CONTRIBUTING.md](CONTRIBUTING.md).
+
+1. Створіть окрему гілку від актуального `main` для кожної задачі (`feat/<issue>-name` або `fix/<issue>-name`).
+2. Зробіть зміни та додайте unit-тести нової функціональності (для виправлення дефекту — regression test).
+3. Перед push локально виконайте:
+
+   ```bash
+   npm install
+   npm run lint
+   npm run format:check
+   npm run typecheck
+   npm test
+   npm run build
+   ```
+
+4. Запуште **лише свою гілку** та відкрийте **один Pull Request на одну задачу** з цільовою гілкою `main`. Прямий push у `main` заборонений правилами команди.
+5. GitHub Actions автоматично запускає [PR quality gates](.github/workflows/quality.yml) для кожного PR у `main`: ESLint, Prettier, TypeScript typecheck, unit-тести та production build. Результати видно у вкладці **Checks** PR. Якщо будь-яка перевірка падає, виправте причину у своїй гілці та повторіть перевірку.
+6. Після PASS усіх перевірок, code review та виконання acceptance criteria (для UI — browser E2E зі скриншотами) використовуйте лише **Squash and merge**. Звичайний merge і rebase merge не використовуються.
+
+**Важливо:** CI уже налаштований, але примусове блокування merge при невдалих перевірках вимагає GitHub Ruleset / branch protection для `main` з обов'язковим status check `verify`. Доки це не налаштовано адміністратором, правила merge є командною політикою, а не технічним обмеженням GitHub.
+
 ## Team
 
 | Role | Member | Responsibility |
