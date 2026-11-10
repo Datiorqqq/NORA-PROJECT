@@ -1,0 +1,7 @@
+node_modules/
+build/
+dist/
+coverage/
+.react-router/
+package-lock.json
+backend/package-lock.json

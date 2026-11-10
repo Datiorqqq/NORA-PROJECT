@@ -1,9 +1,6 @@
 import assert from "node:assert/strict";
 import { afterEach, test } from "node:test";
-import {
-  getRequiredServerEnv,
-  MissingServerConfigurationError,
-} from "../app/.server/env.ts";
+import { getRequiredServerEnv, MissingServerConfigurationError } from "../app/.server/env.ts";
 
 const savedValues = {
   SESSION_SECRET: process.env.SESSION_SECRET,
@@ -20,10 +17,7 @@ afterEach(() => {
 
 test("missing server configuration is rejected", () => {
   delete process.env.MOODLE_BASE_URL;
-  assert.throws(
-    () => getRequiredServerEnv("MOODLE_BASE_URL"),
-    MissingServerConfigurationError,
-  );
+  assert.throws(() => getRequiredServerEnv("MOODLE_BASE_URL"), MissingServerConfigurationError);
 });
 
 test("blank server configuration is rejected", () => {
