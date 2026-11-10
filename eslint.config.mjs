@@ -4,7 +4,13 @@ import globals from "globals";
 
 export default tseslint.config(
   {
-    ignores: ["**/node_modules/**", "**/build/**", "**/dist/**", "**/coverage/**", ".react-router/**"],
+    ignores: [
+      "**/node_modules/**",
+      "**/build/**",
+      "**/dist/**",
+      "**/coverage/**",
+      ".react-router/**",
+    ],
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,tsx}"],
