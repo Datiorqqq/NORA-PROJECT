@@ -27,7 +27,7 @@
 | Dashboard, Courses, Deadlines, AI Chat | Заплановано | [#3](https://github.com/Datiorqqq/NORA-PROJECT/issues/3), [#5](https://github.com/Datiorqqq/NORA-PROJECT/issues/5) |
 | Встановлювана PWA, адаптивність та реальний E2E | Заплановано | [#12](https://github.com/Datiorqqq/NORA-PROJECT/issues/12), [#4](https://github.com/Datiorqqq/NORA-PROJECT/issues/4) |
 
-**Обмеження PoC:** один застосунок, персональні дані лише з власної Moodle-сесії, доступ до Moodle — лише на читання. Окремі Express API, Firebase, власна база даних, QDIP, RAG і векторне сховище **не входять до поточної архітектури**. Не додавайте їх без окремого погодження.
+**Обмеження PoC:** один застосунок, персональні дані лише з власної Moodle-сесії, доступ до Moodle — лише на читання.
 
 ## Технології та архітектура
 
@@ -109,8 +109,6 @@
 | [`.github/workflows/quality.yml`](.github/workflows/quality.yml) | CI-перевірки для PR до `main` |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Детальні правила командної роботи |
 
-**Увага:** `backend/` і `frontend/` у `main` — залишки старої структури документації. Їхні README з Express/Firebase та окремим frontend **не відповідають поточній архітектурі**. Нові компоненти розміщуйте в `app/`, не відновлюйте два незалежні застосунки.
-
 ## Правила розробки
 
 Ці правила **обов'язкові для кожного студента**. Деталі — у [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -182,7 +180,7 @@ git push -u origin feat/42-short-description
 | Андріана | UI та інтеграція даних |
 | Вадим | UI/UX, Figma та usability |
 
-Розподіл описує напрями роботи **в межах одного React Router застосунку**, а не окремі frontend/backend-сервіси.
+Усі учасники працюють **в одному React Router застосунку**.
 
 - [GitHub Issues](https://github.com/Datiorqqq/NORA-PROJECT/issues) — задачі та acceptance criteria.
 - [Pull Requests](https://github.com/Datiorqqq/NORA-PROJECT/pulls) — зміни та code review.
