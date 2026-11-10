@@ -1,0 +1,34 @@
+name: PR quality gates
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.22.0"
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: ESLint
+        run: npm run lint
+      - name: Prettier (changed files)
+        shell: bash
+        run: |
+          git diff --name-only -z --diff-filter=ACMRT "origin/${{ github.base_ref }}...HEAD" -- '*.js' '*.mjs' '*.cjs' '*.ts' '*.tsx' '*.json' '*.css' '*.md' |
+            xargs -0 -r npx prettier --check
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Unit tests
+        run: npm test
+      - name: Build
+        run: npm run build
