@@ -18,8 +18,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <p className="moodle-login-brand">{loaderData.service}</p>
         <h1 id="moodle-login-title">Перевірка входу в Moodle</h1>
         <p className="moodle-login-description">
-          Університет використовує корпоративний вхід через Microsoft 365.
-          Авторизуйтеся на офіційному сайті Moodle ЛНУ.
+          Університет використовує корпоративний вхід через Microsoft 365. Авторизуйтеся на
+          офіційному сайті Moodle ЛНУ.
         </p>
 
         <form
@@ -35,14 +35,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </form>
 
         <p className="moodle-login-instructions">
-          На сторінці Moodle виберіть <strong>OpenID Connect</strong>, увійдіть
-          з обліковим записом університету та переконайтеся, що відкрилася
-          ваша сторінка Moodle.
+          На сторінці Moodle виберіть <strong>OpenID Connect</strong>, увійдіть з обліковим записом
+          університету та переконайтеся, що відкрилася ваша сторінка Moodle.
         </p>
         <p className="moodle-login-disclaimer" role="note">
-          Перевіряється лише вхід безпосередньо в Moodle. Сесію Nora цей крок
-          ще не створює: інтеграція з Moodle SSO потребує окремого погодженого
-          способу авторизації для застосунку.
+          Перевіряється лише вхід безпосередньо в Moodle. Сесію Nora цей крок ще не створює:
+          інтеграція з Moodle SSO потребує окремого погодженого способу авторизації для застосунку.
         </p>
       </section>
     </main>
