@@ -17,26 +17,17 @@ afterEach(() => {
 
 test("missing server configuration is rejected", () => {
   delete process.env.MOODLE_BASE_URL;
-  assert.throws(
-    () => getRequiredServerEnv("MOODLE_BASE_URL"),
-    MissingServerConfigurationError,
-  );
+  assert.throws(() => getRequiredServerEnv("MOODLE_BASE_URL"), MissingServerConfigurationError);
 });
 
 test("blank server configuration is rejected", () => {
   process.env.GEMINI_API_KEY = "  ";
-  assert.throws(
-    () => getRequiredServerEnv("GEMINI_API_KEY"),
-    MissingServerConfigurationError,
-  );
+  assert.throws(() => getRequiredServerEnv("GEMINI_API_KEY"), MissingServerConfigurationError);
 });
 
 test("short session secrets are rejected", () => {
   process.env.SESSION_SECRET = "too-short";
-  assert.throws(
-    () => getRequiredServerEnv("SESSION_SECRET"),
-    MissingServerConfigurationError,
-  );
+  assert.throws(() => getRequiredServerEnv("SESSION_SECRET"), MissingServerConfigurationError);
 });
 
 test("non-empty credentials remain server-only values", () => {
