@@ -20,7 +20,5 @@ export async function getStudentId(request: Request): Promise<string | null> {
 
   const session = await getSession(request.headers.get("Cookie"));
   const studentId = session.get("studentId");
-  return typeof studentId === "string" && studentId.length > 0
-    ? studentId
-    : null;
+  return typeof studentId === "string" && studentId.length > 0 ? studentId : null;
 }
