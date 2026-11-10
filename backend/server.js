@@ -38,7 +38,12 @@ app.delete("/students/:id", (req, res) => {
   students.splice(index, 1);
   res.json({ message: "Student deleted" });
 });
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
 
+// Export the app without binding port 3000 when unit tests import it.
+if (require.main === module) {
+  app.listen(3000, () => {
+    console.log("Server is running on port 3000");
+  });
+}
+
+module.exports = app;
