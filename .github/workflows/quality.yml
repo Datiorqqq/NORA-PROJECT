@@ -19,8 +19,11 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: ESLint
         run: npm run lint
-      - name: Prettier
-        run: npm run format:check
+      - name: Prettier (show exact baseline diff)
+        run: |
+          npm run format
+          git diff -- app tests eslint.config.mjs vitest.config.ts package.json
+          git diff --exit-code
       - name: Typecheck
         run: npm run typecheck
       - name: Unit tests
