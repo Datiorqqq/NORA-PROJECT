@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "admitters": ["TarasGez"],
+  "allowedAuthors": ["TarasGez"],
+  "allowedPaths": ["docs/"],
+  "protectedPaths": [".github/", ".autodev.json", "package.json", "app/.server/"],
+  "maxFiles": 3,
+  "maxBytes": 20000,
+  "minTests": 0,
+  "dispatchCost": 1
+}
