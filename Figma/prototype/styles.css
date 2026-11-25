@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@import "./styles/base.css";
+@import "./styles/shell.css";
+@import "./styles/dashboard.css";
+@import "./styles/schedule.css";
+@import "./styles/assistant.css";
+@import "./styles/resources.css";
+@import "./styles/profile.css";
+@import "./styles/auth.css";
+@import "./styles/responsive.css";
+@import "./styles/auth-layout.css";
